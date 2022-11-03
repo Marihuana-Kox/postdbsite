@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+}
+.content-text {
+    margin: 50px 0 0 0;
+}
+img {
+    width: 100% !important;
+}
+.text-white:hover {
+    color: red !important;
+}
+.text-white:visited {
+    /* color: gray !important; */
+}
+.bredcrump {
+    margin: 10px;
+}
+.articl_list {
+    height: 350px;
+    overflow: hidden;
+}

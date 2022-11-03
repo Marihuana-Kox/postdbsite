@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/mainapp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/mainapp/css/custom-style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    {% include 'sitebar.html' %}
+    {% include 'bredcrump.html' %}
+    <div class="container">
+        <div class="row">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+    {% include 'footer.html' %}
