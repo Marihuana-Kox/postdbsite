@@ -27,6 +27,6 @@ class ListArticleView(ListView):
     queryset = PageArticles.objects.filter(name=0)
     template_name = 'mainapp/article_list.html'
 
-    # def get_queryset(self):
-    #     return PageArticles.objects.filter(category=True)
+    def get_queryset(self):
+        return PageArticles.objects.filter(category=True)
 
