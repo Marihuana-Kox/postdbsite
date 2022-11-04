@@ -24,9 +24,7 @@ class SitePageDetail(DetailView):
 
 class ListArticleView(ListView):
     model = PageArticles
-    queryset = PageArticles.objects.filter(name=0)
+    queryset = PageArticles.objects.filter(name__in=[0, 'list-articles'])
     template_name = 'mainapp/article_list.html'
 
-    def get_queryset(self):
-        return PageArticles.objects.filter(category=True)
 
