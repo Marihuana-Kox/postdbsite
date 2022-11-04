@@ -2,14 +2,22 @@
 {% block content %}
 {% if object_list %}
 {% for query in object_list %}
-    {{ query.title }}
-    {{ break }}
-{% endfor %}
-{% for query in object_list %}
+{% if query.name == 'list-articles' %}
+<div class="col-md-12">
+    <h1>{{ query.title }}</h1>
+</div>
+<div class="col-md-2 content-text">
+    <p><img src="/{{ query.image }}" alt="{{ query.title }}"></p>
+</div>
+<div class="col-md-10 content-text">
+    <p>{{ query.article }}</p>
+</div>
+{% else %}
 <div class="container articl_list">
     <div class="row">
         <div class="col-md-12">
             <h3>{% block title %}{{ query.title }}{% endblock %}</h3>
+            <h5>{{ query.description }}</h5>
         </div>
         <div class="col-md-4 content-text">
             <p><img src="/{{ query.image }}" alt="{{ query.title }}"></p>
@@ -19,6 +27,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 {% endfor %}
 {% else %}
 <h3>К сожелению никого нет</h3>
